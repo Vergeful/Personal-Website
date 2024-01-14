@@ -1,42 +1,140 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.site-wrapper{
+  min-height: 100vh;
+  padding: 20px 30px;
+  background-color: #A16AE8;
+  color: #330b68;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* PICTURE, NAME AND INTERESTS */
+.info{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 2vw;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.img-container{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.img-container img{
+  width: 80%;
+  height: 80%;
+  border-radius: 5px;
+}
+
+.info-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 5vh;
+}
+
+.info-details .two{
+  font-size: 2rem;
+}
+
+.info-details .name{
+  text-decoration: underline #FD49A0;
+  text-underline-offset: 5px;
+}
+
+.info-details .typed{
+  color: #B4FEE7;
+}
+
+/* PROJECTS */
+
+.section-header{
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #B4FEE7;
+  margin-bottom: 2vh;
+  text-decoration: underline #FD49A0;
+  text-underline-offset: 5px;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vh;
+}
+
+.project{
+  background-color: #B4FEE7;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vh;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.project .header{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+
+.project > a{
+  color: #FD49A0;
+  text-decoration: underline #FD49A0;
+  text-underline-offset: 5px;
+}
+
+.project > a:hover{
+  color: #330b68;
+}
+
+.soon{
+  opacity: 0.5;
+}
+
+/* RESUME */
+.resume{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pdf{
+  width: 100%;
+  height: 500px;
+}
+
+/* Screen Responsiveness as screen shrinks */
+@media only screen  and (max-width: 700px) {
+  .info{
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+ 
+  .img-container img{
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .info-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2vh;
+    text-align: center;
+  }
 }
