@@ -88,6 +88,7 @@
   color: #FD49A0;
   text-decoration: underline #FD49A0;
   text-underline-offset: 5px;
+  width: fit-content;
 }
 
 .project > a:hover{
