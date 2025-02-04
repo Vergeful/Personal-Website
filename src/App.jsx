@@ -1,38 +1,98 @@
-import { useTypewriter} from 'react-simple-typewriter'
-import './App.css'
+import { useTypewriter} from 'react-simple-typewriter';
+import EmblaCarousel from './EmblaCarousel'
+import './App.css';
+
+// Carousels' default settings:
+const OPTIONS = { loop: true, duration: 30 }
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 function App() {
   const [typeEffect] = useTypewriter({
-    words: ['am a computer science student.', 'love to code cool stuff!', 'enjoy working out and reading manga!'],
+    words: ['am a compsci student.', 'love to code cool stuff!', 'enjoy working out!', 'love making origami!'],
     loop: {},
     type: 120,
     deleteSpeed: 50,
   })
 
+  const scrollToResume = () => {
+    document.querySelector('.resume').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  
   return (
     <div className='site-wrapper'>
       
+      <header>
+        <h1 className='header-name'>Savitur Maharaj</h1>
+        <div className="header-links">
+          <a 
+            href='https://www.linkedin.com/in/savitur-maharaj-789806206/'
+            target="_blank" 
+            aria-label="LinkedIn"
+            className="icon-link"
+          >
+            <img src='/linkedin.webp' alt='Linkedin Logo Link'className='header-logo-link'/>
+          </a>
+
+          <a 
+            href='https://github.com/Vergeful'
+            target="_blank" 
+            aria-label="Github"
+            className="icon-link"
+          >
+            <img src='/github-mark.png' alt='Github Logo Link'className='header-logo-link'/>
+          </a>
+          <button 
+            onClick={scrollToResume} 
+            className="resume-button"
+          >
+            See Resume
+          </button>
+        </div>
+      </header>
+
+
       <div className='info'>
         <div className='img-container'>
-          <img src='/face.png' alt='Image of Savitur'/>
+          <img src='/face.jpeg' alt='Image of Savitur'/>
         </div>
 
         <div className='info-details'>
           <div>My name is <span className='name'>Savitur!</span></div>
           <div className='two'>I <span className='typed'>{typeEffect}</span></div>
-          
         </div>
+        
       </div>
+
 
       <div className='projects'>
         <div className='section-header'>PROJECTS</div>
         <div className='list'>
+          <div className='project soon'>
+            <div className='header'>Origami-help (In-progress)</div>
+            <div className='description'> Users can view origami tutorials, post their own models and interact with other users' creations.</div>
+            <div className='tech'>Tech used: Typescript, .NET Web API</div>
+            <a href="https://github.com/Vergeful/Origami-help" target="_blank">See code at Github</a>
+            {/* <a href="" target="_blank">Go to website (coming soon)</a> */}
+          </div>
+
+          <div className='project'>
+            <div className='header'>Book Club Organizer</div>
+            <div className='description'>Users can join or host book clubs based on certain themes, which puts them into a live chat.</div>
+            <div className='tech'>Tech used: React, Tailwind, Firebase, Docker</div>
+            <a href="https://github.com/Vergeful/Book-Club-Organizer" target="_blank">See code at Github</a>
+            <div style={{ fontWeight: "bold" }}>Some screenshots from the application:</div>
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} type={'book'}/>
+          </div>
+
           <div className='project'>
             <div className='header'>Student Scheduler DB Management System</div>
             <div className='description'>Students can easily enroll in courses relevant to their degree(s) and admins can make changes to degrees and their courses.</div>
             <div className='tech'>Tech used: React, Sass, Nodejs, MySQL, AWS</div>
             <a href="https://github.com/Vergeful/Student-Scheduler" target="_blank">See code at Github</a>
-            <a href="" target="_blank">Go to website (coming soon)</a>
+            <div style={{ fontWeight: "bold" }}>Some screenshots from the application:</div>
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} type={'student'}/>
           </div>
 
           <div className='project'>
@@ -56,12 +116,6 @@ function App() {
             <div className='description'>Python script that obtains GPU prices from Newegg's website.</div>
             <div className='tech'>Tech used: Python, Beautiful Soup</div>
             <a href="https://github.com/Vergeful/WebScraper" target="_blank">See code at Github</a>
-          </div>
-
-          <div className='project soon'>
-            <div className='header'>Fitness with Friends (Coming soon)</div>
-            <div className='description'> Users can post their lifts of the day and their friends can comment on them.</div>
-            <div className='tech'>Tech used: Typescript, .NET Web API</div>
           </div>
         </div>
       </div>
