@@ -7,6 +7,13 @@ const OPTIONS = { loop: true, duration: 30 }
 const SLIDE_COUNT = 5
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
+const VOL_SLIDE_COUNT = 6
+const VOL_SLIDES = Array.from(Array(VOL_SLIDE_COUNT).keys())
+
+const AGARIO_SLIDE_COUNT = 2
+const AGARIO_SLIDES = Array.from(Array(AGARIO_SLIDE_COUNT).keys())
+
+
 function App() {
   const [typeEffect] = useTypewriter({
     words: ['am a compsci student.', 'love to code cool stuff!', 'enjoy working out!', 'love making origami!'],
@@ -69,12 +76,30 @@ function App() {
       <div className='projects'>
         <div className='section-header'>PROJECTS</div>
         <div className='list'>
-          <div className='project soon'>
-            <div className='header'>Origami-help (In-progress)</div>
+          {/* <div className='project soon'> */}
+            {/* <div className='header'>Origami-help (In-progress)</div>
             <div className='description'> Users can view origami tutorials, post their own models and interact with other users' creations.</div>
             <div className='tech'>Tech used: Typescript, .NET Web API</div>
-            <a href="https://github.com/Vergeful/Origami-help" target="_blank">See code at Github</a>
+            <a href="https://github.com/Vergeful/Origami-help" target="_blank">See code at Github</a> */}
             {/* <a href="" target="_blank">Go to website (coming soon)</a> */}
+          {/* </div> */}
+
+          <div className='project'>
+            <div className='header'>Voluntree (Ongoing)</div>
+            <div className='description'>The goal of VolunTree is to allow users to easily access volunteering opportunities posted by organizations. We also aim to make it easier for organizations to find volunteers and efficiently manage their active volunteering positions.</div>
+            <div className='tech'>Tech used: SwiftUI, Firebase</div>
+            <a href="https://github.com/tahaminachy43/VolunTree" target="_blank">See code at Github</a>
+            <div style={{ fontWeight: "bold" }}>Some screenshots from the application:</div>
+            <EmblaCarousel slides={VOL_SLIDES} options={OPTIONS} type={'vol'}/>
+          </div>
+
+          <div className='project'>
+            <div className='header'>Agar.io clone</div>
+            <div className='description'>Recreation of the popular multiplayer game, agario, using a distributed approach.</div>
+            <div className='tech'>Tech used: Typescript, Django</div>
+            <a href="https://github.com/Vergeful/Snake.io/tree/integration_v2" target="_blank">See code at Github</a>
+            <div style={{ fontWeight: "bold" }}>Some screenshots from the application:</div>
+            <EmblaCarousel slides={AGARIO_SLIDES} options={OPTIONS} type={'agario'}/>
           </div>
 
           <div className='project'>
