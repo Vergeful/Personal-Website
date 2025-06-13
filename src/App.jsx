@@ -62,7 +62,7 @@ function App() {
 
       <div className='info'>
         <div className='img-container'>
-          <img src='/face.jpeg' alt='Image of Savitur'/>
+          <img src='/face.png' alt='Image of Savitur'/>
         </div>
 
         <div className='info-details'>
@@ -147,7 +147,7 @@ function App() {
 
       <div className='resume'>
         <div className='section-header'>RESUME</div>
-        <iframe id='pdf' src="/Resume1.pdf" frameborder="0"></iframe>
+        <iframe id='pdf' src="/Resume.pdf" frameborder="0"></iframe>
       </div>
 
     </div>
