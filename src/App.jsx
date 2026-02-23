@@ -11,6 +11,9 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 const VOL_SLIDE_COUNT = 6;
 const VOL_SLIDES = Array.from(Array(VOL_SLIDE_COUNT).keys());
 
+const MRI_SLIDE_COUNT = 4;
+const MRI_SLIDES = Array.from(Array(MRI_SLIDE_COUNT).keys());
+
 function App() {
   const [typeEffect] = useTypewriter({
     words: ['am a compsci student.', 'love to code cool stuff.', 'like problem solving.', 'also enjoy working out!'],
@@ -42,6 +45,15 @@ function App() {
   };
 
   const projects = [
+      {
+      title: 'Brain Tumor Classifier',
+      description: 'Developed a high-accuracy imaging pipeline leveraging ResNet-50 and EfficientNet-B0, achieving an ensemble accuracy of 98.86% in classifying four types of brain tumors from MRI scans.',
+      tech: 'Pytorch',
+      github: 'https://github.com/Vergeful/Brain-Tumor-Classification/blob/main/notebook.ipynb',
+      carousel: true,
+      slides: MRI_SLIDES,
+      type: 'mri'
+    },
     {
       title: 'Voluntree',
       description: 'The goal of VolunTree is to allow users to easily access volunteering opportunities posted by organizations. We also aim to make it easier for organizations to find volunteers and efficiently manage their active volunteering positions.',
