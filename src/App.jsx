@@ -114,7 +114,7 @@ function App() {
           <a href='https://github.com/Vergeful' target="_blank" aria-label="Github" className="icon-link">
             <img src='/github-mark.png' alt='Github Logo Link' className='header-logo-link'/>
           </a>
-          <button onClick={scrollToResume} className="resume-button">See Resume</button>
+          {/* <button onClick={scrollToResume} className="resume-button">See Resume</button> */}
         </div>
       </header>
 
@@ -155,10 +155,10 @@ function App() {
         </div>
       </div>
 
-      <div className='resume'>
+      {/* <div className='resume'>
         <div className='section-header'>RESUME</div>
         <iframe id='pdf' src="/Resume.pdf" frameBorder="0"></iframe>
-      </div>
+      </div> */}
     </div>
   );
 }

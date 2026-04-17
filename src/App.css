@@ -198,15 +198,6 @@ header h1{
 
 /* Screen Responsiveness as screen shrinks */
 @media only screen  and (max-width: 700px) {
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    padding: 12px 0;
-    row-gap: 0.8rem;
-  }
 
   header h1 {
     font-size: 2.25rem; 
@@ -222,11 +213,6 @@ header {
     align-items: center;
     gap: 0.8rem;
     flex-wrap: wrap;
-  }
-
-  .icon-link {
-    max-width: 28px;
-    max-height: 28px;
   }
 
   .header-logo-link {
